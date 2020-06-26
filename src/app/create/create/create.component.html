@@ -1,6 +1,12 @@
 <h1>モンスターを選ぶ</h1>
 
-<p>カルーセルがはいるよ</p>
+<div>
+  <swiper [config]="config" [(index)]="selectedMonsterId">
+    <div *ngFor="let petId of petIds">
+      <img src="/assets/images/monster-{{ petId }}.png" alt="" />
+    </div>
+  </swiper>
+</div>
 
 <form [formGroup]="form" (ngSubmit)="submit()">
   <mat-form-field>
