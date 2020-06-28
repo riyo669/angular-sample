@@ -8,11 +8,14 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
   styleUrls: ['./create.component.scss'],
 })
 export class CreateComponent implements OnInit {
-  petIds = [...Array(10)].map((_, i) => i + 1);
+  monsterIds = [...Array(10)].map((_, i) => i + 1);
   config: SwiperConfigInterface = {
     loop: true,
     navigation: true,
-    pagination: true,
+    pagination: {
+      el: '.pager',
+      clickable: true,
+    },
     centeredSlides: true,
     slidesPerView: 3,
   };
