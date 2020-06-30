@@ -1,0 +1,17 @@
+<div class="monster">
+  <figure class="monster__avatar">
+    <img [src]="monster.avatarURL" alt="" />
+  </figure>
+  <div class="monster__body">
+    <p class="monster__name">
+      {{ monster.name }} <small>Lv {{ monster.level }}</small>
+    </p>
+    <mat-progress-bar
+      class="monster__exp-bar"
+      mode="determinate"
+      [value]="getExpPercentage()"
+    ></mat-progress-bar>
+
+    <p class="monster__exp">経験値{{ monster.exp }} / {{ maxExp }}</p>
+  </div>
+</div>
