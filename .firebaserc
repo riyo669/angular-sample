@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "gitmonster-b8706"
+  },
+  "targets": {
+    "gitmonster-b8706": {
+      "hosting": {
+        "angular-sample": [
+          "gitmonster-b8706"
+        ]
+      }
+    }
   }
 }
