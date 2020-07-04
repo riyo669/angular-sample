@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireFunctionsModule,
+    MatSnackBarModule,
   ],
   providers: [{ provide: REGION, useValue: 'asia-northeast1' }],
   bootstrap: [AppComponent],
