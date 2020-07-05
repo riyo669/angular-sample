@@ -1,4 +1,7 @@
 
 <div class="container">
-  <app-monster [monster]="monster"></app-monster>
+  <app-monster
+    *ngIf="monster$ | async as monster"
+    [monster]="monster"
+  ></app-monster>
 </div>

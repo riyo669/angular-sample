@@ -1,6 +1,8 @@
 export interface Monster {
-  avatarURL: string;
+  monsterImageId: number;
   name: string;
+  gender: 'male' | 'female';
   level: number;
   exp: number;
+  trainerId: string;
 }

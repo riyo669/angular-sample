@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { MonsterService } from 'src/app/services/monster.service';
+import { Monster } from 'src/app/interfaces/monster';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -31,12 +35,28 @@ export class CreateComponent implements OnInit {
     return this.form.get('name') as FormControl;
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private monsterServise: MonsterService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
   submit() {
-    console.log(this.form.value);
-    console.log(this.selectedMonsterId);
+    const formData = this.form.value;
+    const monster: Monster = {
+      monsterImageId: this.selectedMonsterId,
+      name: formData.name,
+      gender: formData.gender,
+      level: 1,
+      exp: 0,
+      trainerId: this.authService.uid,
+    };
+    // console.log(monster);
+    this.monsterServise.createMonster(monster);
+    // ホーム画面にリダイレクト
+    this.router.navigateByUrl('/');
   }
 }

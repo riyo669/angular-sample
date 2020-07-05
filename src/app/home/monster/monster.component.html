@@ -1,6 +1,9 @@
 <div class="monster">
   <figure class="monster__avatar">
-    <img [src]="monster.avatarURL" alt="" />
+    <img
+      src="/assets/images/monster-{{ monster.monsterImageId + 1 }}.png"
+      alt=""
+    />
   </figure>
   <div class="monster__body">
     <p class="monster__name">
