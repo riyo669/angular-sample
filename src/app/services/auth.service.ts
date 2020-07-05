@@ -26,6 +26,8 @@ export class AuthService {
       this.snackBar.open('ログインしました😃', null, {
         duration: 2000,
       });
+      // ログイン後にリダイレクト
+      this.router.navigateByUrl('/create');
     });
   }
 
@@ -34,7 +36,8 @@ export class AuthService {
       this.snackBar.open('ログアウトしました😇', null, {
         duration: 2000,
       });
+      // ログアウト後にリダイレクト
+      this.router.navigateByUrl('/welcome');
     });
-    this.router.navigateByUrl('/welcome');
   }
 }
