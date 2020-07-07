@@ -53,6 +53,7 @@ export class CreateComponent implements OnInit {
       level: 1,
       exp: 0,
       trainerId: this.authService.uid,
+      ownerGithubId: this.authService.ownerGithubId,
     };
     // console.log(monster);
     this.monsterServise.createMonster(monster);

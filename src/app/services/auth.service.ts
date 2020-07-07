@@ -12,6 +12,7 @@ export class AuthService {
   // 最新のログイン情報をとれるストリーム
   afUser$: Observable<User> = this.afAuth.user;
   uid: string;
+  ownerGithubId: number;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -20,6 +21,7 @@ export class AuthService {
   ) {
     this.afUser$.subscribe((user) => {
       this.uid = user && user.uid;
+      this.ownerGithubId = +user.providerData[0].uid;
     });
   }
 

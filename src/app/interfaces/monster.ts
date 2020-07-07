@@ -5,4 +5,5 @@ export interface Monster {
   level: number;
   exp: number;
   trainerId: string;
+  ownerGithubId: number;
 }
