@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Monster } from './interfaces/monster';
 
-//各レベルの累計値
+// 各レベルの累計値
 const expTable = [20, 40, 100, 200, 350, 500, 700, 900, 1100, 1500];
 
 @Pipe({
